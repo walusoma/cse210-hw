@@ -34,8 +34,14 @@ class Program
         {
             Console.Clear();
             Console.WriteLine(scripture.GetDisplayText());
-            Console.WriteLine("\nPress Enter to hide words or type 'quit' to exit.");
 
+            if (scripture.AllWordsHidden())
+            {
+                Console.WriteLine("\nAll words are hidden. Program ending.");
+                break;
+            }
+
+            Console.WriteLine("\nPress Enter to hide words or type 'quit' to exit.");
             string input = Console.ReadLine();
 
             if (input != null && input.ToLower() == "quit")
@@ -44,14 +50,6 @@ class Program
             }
 
             scripture.HideRandomWords(3);
-
-            if (scripture.AllWordsHidden())
-            {
-                Console.Clear();
-                Console.WriteLine(scripture.GetDisplayText());
-                Console.WriteLine("\nAll words are hidden. Program ending.");
-                break;
-            }
         }
     }
 }
