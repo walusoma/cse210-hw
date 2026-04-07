@@ -1,0 +1,2 @@
+1
+SimpleGoal:buy helcat,i want 27000 us dolars to buy helcat,1,True
